@@ -1,6 +1,6 @@
 from src.OLAChurnPred.constants import *
 from src.OLAChurnPred.utils.common import read_yaml, create_directories
-from src.OLAChurnPred.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from src.OLAChurnPred.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransormationConfig
 
 class ConfigurationManager:
     def __init__(self,
@@ -42,3 +42,15 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransormationConfig:
+        config = self.config.data_transformation
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransormationConfig(
+            root_dir=config.root_dir,
+            data_path = config.data_path
+        )
+
+        return data_transformation_config
+
