@@ -1,1 +1,15 @@
-key: value
+COLUMNS:
+  Sr                    : int64  
+  MMM-YY                : object 
+  Driver_ID             : int64  
+  Age                   : float64
+  Gender                : float64
+  City                  : object 
+  Education_Level       : int64  
+  Income                : int64  
+  Dateofjoining         : object 
+  LastWorkingDate       : object 
+  Joining Designation   : int64  
+  Grade                 : int64  
+  Total Business Value  : int64  
+  Quarterly Rating      : int64  
