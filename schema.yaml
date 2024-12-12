@@ -13,3 +13,6 @@ COLUMNS:
   Grade                 : int64  
   Total Business Value  : int64  
   Quarterly Rating      : int64  
+
+TARGET_COLUMN: 
+  name: Target

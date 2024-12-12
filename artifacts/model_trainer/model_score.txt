@@ -1,0 +1,1 @@
+Best model score is: {gbc_randomcv.best_score_}Best model parameters are: {gbc_randomcv.best_params_}

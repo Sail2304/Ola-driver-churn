@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.impute import KNNImputer
+from sklearn.preprocessing import OneHotEncoder
+from pathlib import Path
+import joblib
 
 def change_data_types(data):   
     data['MMM-YY'] = pd.to_datetime(data['MMM-YY'], format="%m/%d/%y")
@@ -12,26 +13,26 @@ def change_data_types(data):
 
 def missing_value_imputation(data):
 
-    data['Total Business Value'].replace(to_replace=0, value = np.nan, inplace=True)
+    # data['Total Business Value'].replace(to_replace=0, value = np.nan, inplace=True)
     # fill missing age and gender 
     data['Age'] = data.groupby('Driver_ID')['Age'].transform(lambda x: x.fillna(x.min()))
     data['Gender'] = data.groupby('Driver_ID')['Gender'].transform(lambda x: x.fillna(x.min()))
 
-    ######## let's use KNNImputer to fill missing values in Total Business Value
-    ## separate numeric columns
-    df_num = data.loc[:,(data.dtypes=='int64')|(data.dtypes=='float64')]
-    df_num.drop(columns='Sr',axis=1,inplace=True)
+    # ######## let's use KNNImputer to fill missing values in Total Business Value
+    # ## separate numeric columns
+    # df_num = data.loc[:,(data.dtypes=='int64')|(data.dtypes=='float64')]
+    # df_num.drop(columns='Sr',axis=1,inplace=True)
 
-    ##scaling data as KNN is distance based algorithm
-    Scaler=MinMaxScaler()
-    df_num_scaled = Scaler.fit_transform(df_num)
-    imputer = KNNImputer(n_neighbors=5)
-    df_num_knn = pd.DataFrame(imputer.fit_transform(df_num_scaled),columns = df_num.columns)
-    df_num_1 = pd.DataFrame(Scaler.inverse_transform(df_num_knn),columns=df_num.columns)
-    df_non_num=data.loc[:,(data.dtypes!='int64')&(data.dtypes!='float64')]
-    df = pd.concat([df_num_1,df_non_num], axis=1)
+    # ##scaling data as KNN is distance based algorithm
+    # Scaler=MinMaxScaler()
+    # df_num_scaled = Scaler.fit_transform(df_num)
+    # imputer = KNNImputer(n_neighbors=5)
+    # df_num_knn = pd.DataFrame(imputer.fit_transform(df_num_scaled),columns = df_num.columns)
+    # df_num_1 = pd.DataFrame(Scaler.inverse_transform(df_num_knn),columns=df_num.columns)
+    # df_non_num=data.loc[:,(data.dtypes!='int64')&(data.dtypes!='float64')]
+    # df = pd.concat([df_num_1,df_non_num], axis=1)
 
-    return df
+    return data
 
 
 def group_transform_data(df):
@@ -63,9 +64,21 @@ def group_transform_data(df):
     df1['Target'] = np.zeros(shape=(len(df1)))
     df1.loc[~(df1['Last_Working_Date'].isna()), 'Target'] = 1.0
     df1.drop(columns=['Driver_ID','First_Quarterly_Rating', 'First_Income', 'Last_Working_Date'], inplace=True)
-    df1 = pd.concat([df1, pd.get_dummies(df1['City'], drop_first=True, prefix='City', dtype=int)], axis=1)
-    df1.drop(columns=['City'], inplace=True)
+
     return df1
+
+def OHEncoding(df, path:Path):
+    ohe = OneHotEncoder(drop='first')
+    ohe_val = ohe.fit_transform(df['City'].values.reshape(-1,1)).toarray()
+    ohe_features = ohe.categories_[0][1:]
+    df_city = pd.DataFrame(data=ohe_val, columns=ohe_features)
+    df = pd.concat([df, df_city], axis=1)
+    df = df.drop(columns=['City'])
+
+    joblib.dump(ohe, path)
+
+    return df
+    
 
     
 

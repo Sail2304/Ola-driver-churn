@@ -5,7 +5,6 @@ import pandas as pd
 from src.OLAChurnPred.utils.data_transformation_utils import *
 from src.OLAChurnPred.entity.config_entity import DataTransormationConfig
 
-
 class DataTransormation:
     def __init__(self, config: DataTransormationConfig):
         self.config = config
@@ -16,11 +15,13 @@ class DataTransormation:
             data = change_data_types(data)
             data = missing_value_imputation(data)
             data = group_transform_data(data)
+            data = OHEncoding(data, self.config.ohencoder_path)
             return data
         except Exception as e:
             raise e
         
-    def train_test_splitting(self, data):
+    def train_test_splitting(self):
+        data = self.transform()
         train,test = train_test_split(data, test_size=0.20)
 
         train.to_csv(os.path.join(self.config.root_dir,"train.csv"),index=False)

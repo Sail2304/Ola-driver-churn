@@ -1,6 +1,10 @@
 from src.OLAChurnPred.constants import *
 from src.OLAChurnPred.utils.common import read_yaml, create_directories
-from src.OLAChurnPred.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransormationConfig
+from src.OLAChurnPred.entity.config_entity import (DataIngestionConfig, 
+                                                  DataValidationConfig, 
+                                                  DataTransormationConfig,
+                                                  ModelTrainerConfig,
+                                                  ModelEvaluationConfig)
 
 class ConfigurationManager:
     def __init__(self,
@@ -49,8 +53,54 @@ class ConfigurationManager:
 
         data_transformation_config = DataTransormationConfig(
             root_dir=config.root_dir,
-            data_path = config.data_path
+            data_path = config.data_path,
+            ohencoder_path=config.ohencoder_path
         )
 
         return data_transformation_config
 
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.Model_Params
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path=config.test_data_path,
+            model_name=config.model_name,
+            model_score=config.model_score,
+            learning_rate=params.learning_rate,
+            max_depth=params.max_depth,
+            max_features=params.max_features,
+            min_samples_leaf=params.min_samples_leaf,
+            min_samples_split=params.min_samples_split,
+            n_estimators=params.n_estimators,
+            target_column=schema.name
+
+        )
+        return model_trainer_config
+
+    
+    def get_model_evaluation_config(self)->ModelEvaluationConfig:
+        config=self.config.model_evaluation
+        params=self.params.Final_Params
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            ohencoder_path=config.ohencoder_path,
+            model_path=config.model_path,
+            all_params=params,
+            metric_file_name=config.metric_file_name,
+            target_column=schema.name,
+            mlflow_uri="https://dagshub.com/Sail2304/Ola-driver-churn.mlflow"
+        )
+
+        return model_evaluation_config
