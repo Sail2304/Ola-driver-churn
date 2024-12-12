@@ -31,3 +31,7 @@ model_evaluation:
   ohencoder_path: artifacts/data_transformation/ohencoder.joblib
   model_path: artifacts/model_trainer/model.joblib
   metric_file_name: artifacts/model_evaluation/metrics.json
+
+prediction_config:
+  model_path: artifacts/model_trainer/model.joblib
+  ohencoder_path: artifacts/data_transformation/ohencoder.joblib

@@ -784,3 +784,161 @@ x==========x]
 [2024-12-12 22:19:17,836: INFO: common: yaml file: schema.yaml loaded successfully]
 [2024-12-12 22:19:17,837: INFO: common: created directory at: artifacts]
 [2024-12-12 22:19:17,838: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-12 22:20:27,032: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:20:27,032: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:20:27,043: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:20:27,044: INFO: common: created directory at: artifacts]
+[2024-12-12 22:20:27,045: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-12 22:20:27,656: INFO: 3681127577: Train and test files created]
+[2024-12-12 22:31:20,062: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:31:20,077: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:31:20,082: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:31:20,085: INFO: common: created directory at: artifacts]
+[2024-12-12 22:31:20,087: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-12-12 22:32:42,466: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:32:42,484: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:32:42,484: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:32:42,484: INFO: common: created directory at: artifacts]
+[2024-12-12 22:32:42,484: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-12 22:47:58,087: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:47:58,101: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:47:58,107: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:47:58,107: INFO: common: created directory at: artifacts]
+[2024-12-12 22:47:58,119: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-12-12 22:47:59,007: INFO: common: json file saved at: artifacts\model_evaluation\metrics.json]
+[2024-12-12 22:56:03,199: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-12-12 22:56:03,199: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:56:03,216: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:56:03,220: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:56:03,221: INFO: common: created directory at: artifacts]
+[2024-12-12 22:56:03,222: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-12 22:56:04,125: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 190617
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "f0fc0776fcc7620f2654f011f1d53a9e1c983990cb5c6cfd46b56aa8822e12f9"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 66E9:2894B1:291A3B:325B61:675B1CAC
+Accept-Ranges: bytes
+Date: Thu, 12 Dec 2024 17:26:04 GMT
+Via: 1.1 varnish
+X-Served-By: cache-hyd1100025-HYD
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1734024364.194131,VS0,VE339
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: f585c294fa48cc30156214c288155950d3521e7f
+Expires: Thu, 12 Dec 2024 17:31:04 GMT
+Source-Age: 0
+
+]
+[2024-12-12 22:56:04,158: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-12-12 22:56:04,158: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-12-12 22:56:04,158: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:56:04,166: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:56:04,170: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:56:04,172: INFO: common: created directory at: artifacts]
+[2024-12-12 22:56:04,173: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-12 22:56:04,217: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-12-12 22:56:04,218: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-12-12 22:56:04,220: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:56:04,233: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:56:04,237: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:56:04,237: INFO: common: created directory at: artifacts]
+[2024-12-12 22:56:04,238: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-12 22:56:04,832: INFO: data_transformation: Train and test files created]
+[2024-12-12 22:56:04,832: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-12-12 22:56:04,832: INFO: main: >>>>>> stage Model Training Stage started <<<<<<]
+[2024-12-12 22:56:04,848: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 22:56:04,851: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 22:56:04,853: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 22:56:04,854: INFO: common: created directory at: artifacts]
+[2024-12-12 22:56:04,855: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-12 23:06:32,588: INFO: main: >>>>>> stage Model Training Stage completed <<<<<<
+
+x==========x]
+[2024-12-12 23:06:32,588: INFO: main: >>>>>> stage Model evaluation Stage started <<<<<<]
+[2024-12-12 23:06:32,588: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-12 23:06:32,588: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-12 23:06:32,599: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-12-12 23:06:32,600: INFO: common: created directory at: artifacts]
+[2024-12-12 23:06:32,600: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-12-12 23:06:38,567: INFO: common: json file saved at: artifacts\model_evaluation\metrics.json]
+[2024-12-12 23:06:53,459: INFO: main: >>>>>> stage Model evaluation Stage completed <<<<<<
+
+x==========x]
+[2024-12-13 00:18:59,088: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000]
+[2024-12-13 00:18:59,089: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-13 00:19:06,574: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\app.py", line 25, in prediction
+    res = churnpredict(data)
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\src\OLAChurnPred\pipeline\prediction_pipeline.py", line 10, in churnpredict
+    enc_df = pd.DataFrame(enc, columns=ohe.categories_[0][1:])
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\pandas\core\frame.py", line 867, in __init__
+    mgr = ndarray_to_mgr(
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\pandas\core\internals\construction.py", line 336, in ndarray_to_mgr
+    _check_values_indices_shape_match(values, index, columns)
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\pandas\core\internals\construction.py", line 420, in _check_values_indices_shape_match
+    raise ValueError(f"Shape of passed values is {passed}, indices imply {implied}")
+ValueError: Shape of passed values is (1, 1), indices imply (1, 28)
+[2024-12-13 00:19:06,582: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:19:06] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-12-13 00:20:44,000: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000]
+[2024-12-13 00:20:44,000: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-13 00:20:47,047: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\app.py", line 1231, in make_response
+    rv = self.json.response(rv)
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+  File "C:\Users\Sail\AppData\Local\Programs\Python\Python310\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\Sail\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Sail\AppData\Local\Programs\Python\Python310\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Scaler Course\OLACaseStudy\Ola-driver-churn\venv\lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type ndarray is not JSON serializable
+[2024-12-13 00:20:47,072: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:20:47] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-12-13 00:21:22,618: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000]
+[2024-12-13 00:21:22,619: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-13 00:21:27,167: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:21:27] "POST /predict HTTP/1.1" 200 -]
+[2024-12-13 00:21:41,198: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:21:41] "POST /predict HTTP/1.1" 200 -]
+[2024-12-13 00:22:19,558: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:22:19] "POST /predict HTTP/1.1" 200 -]
+[2024-12-13 00:22:26,520: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:22:26] "POST /predict HTTP/1.1" 200 -]
+[2024-12-13 00:22:52,512: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:22:52] "POST /predict HTTP/1.1" 200 -]
+[2024-12-13 00:25:15,218: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:25:15] "POST /predict HTTP/1.1" 200 -]
+[2024-12-13 00:25:53,129: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 00:25:53] "POST /predict HTTP/1.1" 200 -]

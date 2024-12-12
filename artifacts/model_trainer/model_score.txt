@@ -1,1 +1,2 @@
-Best model score is: {gbc_randomcv.best_score_}Best model parameters are: {gbc_randomcv.best_params_}
+Best model score is: 0.5709033613445378
+Best model parameters are: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 2, 'learning_rate': 0.01}
