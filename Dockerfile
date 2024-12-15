@@ -4,7 +4,7 @@ COPY .. ./app
 
 RUN apt-get update -y && apt-get install awscli  libpq-dev build-essential -y
 
-RUN RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ["python3", "app.py"]
 
