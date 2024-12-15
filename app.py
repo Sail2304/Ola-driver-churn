@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from src.OLAChurnPred.pipeline.prediction_pipeline import churnpredict
 
+
 app = Flask(__name__)
 
 
