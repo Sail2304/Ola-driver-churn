@@ -2,6 +2,7 @@ import joblib
 from pathlib import Path
 import pandas as pd
 
+
 def churnpredict(data):
     ohe = joblib.load(Path('artifacts/data_transformation/ohencoder.joblib'))
     model = joblib.load(Path('artifacts/model_trainer/model.joblib'))
